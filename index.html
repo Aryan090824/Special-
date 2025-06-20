@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For You</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* Sparkling Stars */
+.star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* Fade in animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to top right, #ffe4ec, #fddde6);
+      color: #6b1e36;
+      text-align: center;
+      min-height: 100vh;
+      overflow-y: auto;
+      padding-bottom: 100px;
+    }
+
+#startScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(120deg, #ffe4ec, #fff0f5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background-image: 
+    radial-gradient(circle at 20% 20%, #ffdee9 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, #fbd3e9 0%, transparent 60%);
+  animation: shimmer 15s infinite alternate;
+  background-size: 200% 200%;
+}
+
+#startScreen h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8em;
+  margin-bottom: 25px;
+  color: #c2175b;
+  text-shadow: 2px 2px 8px rgba(255, 182, 193, 0.6);
+}
+
+#startBtn {
+  padding: 14px 28px;
+  font-size: 1.2em;
+  background: linear-gradient(to right, #ff80a8, #ffb6c1);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid white;
+}
+
+#startBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      margin-top: 60px;
+      color: #b00050;
+      text-shadow: 2px 2px 6px #ffffffa0;
+      display: none;
+    }
+
+    p {
+      font-size: 1.3em;
+      padding: 20px;
+      max-width: 700px;
+      margin: 30px auto;
+      line-height: 1.7em;
+      color:#6b1e36;
+      display: none;
+    }
+
+    .romantic-line {
+      font-family: 'Dancing Script', cursive;
+      font-size: 50px;
+      color: #ff6b81;
+      text-align: center;
+      margin-top: 25px;
+      display: none;
+    }
+
+    footer {
+      font-size: 0.9em;
+      margin-top: 40px;
+      color: #a84d6a;
+      display: none;
+    }
+
+    @keyframes float {
+      0% {
+        bottom: -50px;
+        left: calc(100% * var(--i));
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.8;
+      }
+      100% {
+        bottom: 100vh;
+        opacity: 0;
+      }
+    }
+
+    .heart {
+      width: 20px;
+      height: 20px;
+      position: fixed;
+      z-index:2;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 8s infinite ease-in;
+      opacity: 0.9;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart:before { top: -10px; left: 0; }
+    .heart:after { left: -10px; top: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- Start Screen -->
+  <div id="startScreen">
+    <h2>Tap to Begin Our Story</h2>
+    <button id="startBtn">Start</button>
+  </div>
+
+  <!-- Hidden Content -->
+  <h1>Hey You!</h1>
+
+  <p>
+    I didn’t know the perfect way to say this… so I made a page.  
+    Because some feelings — especially for someone like <b>My Aanchuu</b> — deserve more than a text. They deserve a whole digital pyaar zone.
+  </p>
+
+  <p>
+    You turn my boring, “what-even-is-life” kind of days into laughter and chaos.  
+    Only you can make <b>your Aaruu</b> laugh like a pagal, calm down with just a “shhh,” and even when you send a text or emoji, I overthing it like crazy, my brain says, "Bro she smiled.....!! "
+  </p>
+
+  <p>
+    <b>Doruu</b>, before you were anything else, you were my best friend… and honestly, my favourite cartoon — the one who always saves me (without the gadgets).  
+    Kabhi kabhi tu itni pgl harkatein karti hai, ki lagta hai koot doon tujhe — par fir yaad aata hai, ki tu meri Aanchuu hai… kaise kootoon yaar, pyaar aajata hai!
+  </p>
+
+  <p>
+    So here’s the thing...  
+    I like you. Not just “flirty texts at night” kind of like — but the real kind.  
+    And because I’m a little dramatic and a lot in feels, I choose a date that’s <i>BORN FROM US</i> — <b>24 × 9 = 216</b>, which means... <b>21st June</b> is now our little love-coded moment.
+  </p>
+
+  <p class="romantic-line">
+    I love you Aanchuu!
+  </p>
+
+  <footer> Smile toh kar hi rhi hogi na... warna page reload ho jaayega!😉</footer>
+
+  <!-- Hearts & Audio -->
+  <script>
+    function createHearts() {
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.setProperty('--i', Math.random());
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = 5 + Math.random() * 5 + 's';
+        document.body.appendChild(heart);
+      }
+    }
+
+    document.getElementById('startBtn').addEventListener('click', () => {
+      document.getElementById('startScreen').style.display = 'none';
+      document.querySelector('h1').style.display = 'block';
+      document.querySelectorAll('p').forEach(p => p.style.display = 'block');
+      document.querySelector('footer').style.display = 'block';
+
+      const audio = new Audio('tone.mp3'); // Must be in same folder
+      audio.play();
+      audio.loop = true;
+      audio.volume = 0.05;
+
+      createHearts();
+    });
+  </script>
+<script>
+  // Generate sparkles
+  for (let i = 0; i < 40; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.left = Math.random() * 100 + 'vw';
+    star.style.top = Math.random() * 100 + 'vh';
+    star.style.animationDuration = 1 + Math.random() * 2 + 's';
+    document.getElementById('startScreen').appendChild(star);
+  }
+
+  // Add fade-in to h2 and button
+  document.querySelector('#startScreen h2').classList.add('fade-in');
+  document.querySelector('#startBtn').classList.add('fade-in');
+</script>
+</body>
+</html>
